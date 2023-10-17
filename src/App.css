@@ -1,0 +1,172 @@
+.App {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.Board {
+  max-width: 900px;
+  margin-top: 25px;
+  background: lightblue;
+  border-radius: 9px;
+  padding: 30px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.picture {
+  padding: 30px;
+  height: 430px;
+  position: relative;
+  background: white;
+  border-radius: 9px;
+  text-align: center;
+}
+
+.center {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  bottom: 41%;
+  margin: 0 auto;
+  border: 2px solid black;
+  border-radius: 50%;
+  background: white;
+  z-index: 2;
+  transition: all 0.5s ease-in-out;
+}
+
+.center-active {
+  background: lightpink;
+  color: lightpink;
+}
+
+.petal {
+  height: 150px;
+  width: 80px;
+  display: inline-block;
+  position: absolute;
+  border: 2px solid black;
+  border-radius: 120% 120% 100% 100%;
+  background: white;
+  z-index: 1;
+  transition: all 0.5s ease-in-out;
+}
+
+.petal-one {
+  bottom: 62%;
+}
+
+.petal-two {
+  transform: rotate(60deg);
+  right: 28%;
+  bottom: 48%;
+}
+
+.petal-three {
+  transform: rotate(120deg);
+  right: 28%;
+  bottom: 23%;
+}
+
+.petal-four {
+  transform: rotate(180deg);
+  bottom: 9%;
+}
+
+.petal-five {
+  transform: rotate(240deg);
+  left: 28%;
+  bottom: 23%;
+}
+
+.petal-six {
+  transform: rotate(300deg);
+  left: 28%;
+  bottom: 48%;
+}
+
+.petal-one-active {
+  background: red;
+  color: red;
+}
+
+.petal-two-active {
+  background: orange;
+  color: orange;
+}
+
+.petal-three-active {
+  background: yellow;
+  color: yellow;
+}
+
+.petal-four-active {
+  background: green;
+  color: green;
+}
+
+.petal-five-active {
+  background: blue;
+  color: blue;
+}
+
+.petal-six-active {
+  background: purple;
+  color: purple;
+}
+
+.palette {
+  padding: 20px 40px;
+  background: white;
+  border-radius: 9px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.palette-color {
+  border: 4px solid white;
+  padding: 20px 28px;
+  border-radius: 50%;
+}
+
+.palette-color:hover {
+  border: 4px solid blueviolet;
+}
+
+.palette-red {
+  background: red;
+}
+
+.palette-orange {
+  background: orange;
+}
+
+.palette-yellow {
+  background: yellow;
+}
+
+.palette-green {
+  background: green;
+}
+
+.palette-blue {
+  background: blue;
+}
+
+.palette-purple {
+  background: purple;
+}
+
+.palette-pink {
+  background: lightpink;
+}
+
+footer {
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: 2%;
+  font-family: monospace;
+}
