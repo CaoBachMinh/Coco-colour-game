@@ -1,6 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 export default function Board() {
+  const [isCompleted, setIsCompleted] = useState(false);
+  const audioRef = useRef(null);
+
+  const [timeRemaining, setTimeRemaining] = useState(30 * 60);
+  const [intervalId, setIntervalId] = useState(null);
+
   const [center, setCenter] = useState("center");
   const [petalOne, setpetalOne] = useState("petal petal-one");
   const [petalTwo, setpetalTwo] = useState("petal petal-two");
@@ -15,6 +21,28 @@ export default function Board() {
   const [bluePalette, setbluePalette] = useState(false);
   const [purplePalette, setpurplePalette] = useState(false);
   const [pinkPalette, setpinkPalette] = useState(false);
+  const formattedTimeRemaining = `${Math.floor(timeRemaining / 60)
+    .toString()
+    .padStart(2, "0")}:${(timeRemaining % 60).toString().padStart(2, "0")}`;
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setTimeRemaining((prevTime) => {
+        if (prevTime <= 1) {
+          clearInterval(id);
+          return 0;
+        }
+        return prevTime - 1;
+      });
+    }, 1000);
+
+    setIntervalId(id);
+
+    // Cleanup effect
+    return () => {
+      clearInterval(id);
+    };
+  }, []);
 
   function handlePetalOne() {
     if (redPalette) {
@@ -86,8 +114,45 @@ export default function Board() {
     setpinkPalette(true);
   }
 
+  useEffect(() => {
+    if (
+      petalOne.includes("petal-one-active") &&
+      petalTwo.includes("petal-two-active") &&
+      petalThree.includes("petal-three-active") &&
+      petalFour.includes("petal-four-active") &&
+      petalFive.includes("petal-five-active") &&
+      petalSix.includes("petal-six-active") &&
+      center.includes("center-active")
+    ) {
+      setIsCompleted(true);
+      audioRef.current.play();
+    }
+  }, [petalOne, petalTwo, petalThree, petalFour, petalFive, petalSix, center]);
+
   return (
     <div className="Board">
+      {isCompleted && (
+        <div className="congrats-message">
+          Chúc mừng bé đã hoàn thành{" "}
+          <button
+            className="home-button"
+            onClick={() =>
+              (window.location.href = "https://coco-game-tau.vercel.app/")
+            }
+          >
+            Quay về trang chủ
+          </button>
+        </div>
+      )}
+      <audio
+        ref={audioRef}
+        src="sound/congratsSound.mp3"
+        preload="auto"
+      ></audio>
+      <div className="timer">
+        Thời gian còn lại: {formattedTimeRemaining}
+        <p>Khuyến cáo chơi game 30 phút/ngày</p>
+      </div>
       <div className="picture mb-4 d-flex justify-content-center">
         <div className={petalOne} onClick={handlePetalOne}>
           1
