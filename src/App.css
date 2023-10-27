@@ -123,7 +123,7 @@
 }
 
 .palette {
-  padding: 20px 40px;
+  padding: 40px 40px;
   background: white;
   border-radius: 9px;
   font-weight: bold;
@@ -160,6 +160,7 @@
   background: blue;
 }
 
+
 .palette-purple {
   background: purple;
 }
@@ -170,7 +171,7 @@
 
 .home-button {
   margin-top: 20px;
-  padding: 15px 30px;
+  padding: 5px 30px;
   background-color: #ffd700;
   border: none;
   border-radius: 25px;
@@ -180,6 +181,21 @@
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   font-family: "Comic Sans MS", cursive, sans-serif;
   transition: all 0.3s;
+  margin-left: 35px;
+}
+.next-button{
+  margin-top: 20px;
+  padding: 5px 30px;
+  background-color: #ffd700;
+  border: none;
+  border-radius: 25px;
+  font-size: 20px;
+  color: #ff4500;
+  cursor: pointer;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  transition: all 0.3s;
+  margin-right: 50px;
 }
 
 .home-button:hover {
@@ -322,4 +338,494 @@ footer {
     font-size: 20px;
     padding: 15px 30px;
   }
+}
+
+.color-button {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 2px;
+  cursor: pointer;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.container_1 {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  }
+  /* Maroon Shades */
+.color-button-maroon {
+  background-color: maroon;
+}
+
+/* Brown Shades */
+.color-button-brown {
+  background-color: brown;
+}
+
+/* Crimson Shades */
+.color-button-crimson {
+  background-color: crimson;
+}
+
+/* Red Shades */
+.color-button-red {
+  background-color: red;
+}
+
+/* Tomato Shades */
+.color-button-tomato {
+  background-color: tomato;
+}
+
+/* Coral Shades */
+.color-button-coral {
+  background-color: coral;
+}
+
+/* Indian Red Shades */
+.color-button-indianred {
+  background-color: indianred;
+}
+
+/* Salmon Shades */
+.color-button-salmon {
+  background-color: salmon;
+}
+
+/* Orange Red Shades */
+.color-button-orangered {
+  background-color: orangered;
+}
+
+/* Dark Orange Shades */
+.color-button-darkorange {
+  background-color: darkorange;
+}
+
+/* Orange Shades */
+.color-button-orange {
+  background-color: orange;
+}
+
+/* Gold Shades */
+.color-button-gold {
+  background-color: gold;
+}
+
+/* Dark Goldenrod Shades */
+.color-button-darkgoldenrod {
+  background-color: darkgoldenrod;
+}
+
+/* Goldenrod Shades */
+.color-button-goldenrod {
+  background-color: goldenrod;
+}
+
+/* Dark Khaki Shades */
+.color-button-darkkhaki {
+  background-color: darkkhaki;
+}
+
+/* Khaki Shades */
+.color-button-khaki {
+  background-color: khaki;
+}
+
+/* Olive Shades */
+.color-button-olive {
+  background-color: olive;
+}
+
+/* Yellow Shades */
+.color-button-yellow {
+  background-color: yellow;
+}
+
+/* Yellow Green Shades */
+.color-button-yellowgreen {
+  background-color: yellowgreen;
+}
+
+/* Dark Olive Green Shades */
+.color-button-darkolivegreen {
+  background-color: darkolivegreen;
+}
+
+/* Olive Drab Shades */
+.color-button-olivedrab {
+  background-color: olivedrab;
+}
+
+/* Green Yellow Shades */
+.color-button-greenyellow {
+  background-color: greenyellow;
+}
+
+/* Dark Green Shades */
+.color-button-darkgreen {
+  background-color: darkgreen;
+}
+
+/* Green Shades */
+.color-button-green {
+  background-color: green;
+}
+
+/* Forest Green Shades */
+.color-button-forestgreen {
+  background-color: forestgreen;
+}
+
+/* Lime Shades */
+.color-button-lime {
+  background-color: lime;
+}
+
+/* Lime Green Shades */
+.color-button-limegreen {
+  background-color: limegreen;
+}
+
+/* Pale Green Shades */
+.color-button-palegreen {
+  background-color: palegreen;
+}
+
+/* Spring Green Shades */
+.color-button-springgreen {
+  background-color: springgreen;
+}
+
+/* Sea Green Shades */
+.color-button-seagreen {
+  background-color: seagreen;
+}
+
+/* Medium Aquamarine Shades */
+.color-button-mediumaquamarine {
+  background-color: mediumaquamarine;
+}
+
+/* Light Sea Green Shades */
+.color-button-lightseagreen {
+  background-color: lightseagreen;
+}
+
+/* Dark Slate Gray Shades */
+.color-button-darkslategray {
+  background-color: darkslategray;
+}
+
+/* Teal Shades */
+.color-button-teal {
+  background-color: teal;
+}
+
+/* Cyan Shades */
+.color-button-cyan {
+  background-color: cyan;
+}
+
+/* Dark Turquoise Shades */
+.color-button-darkturquoise {
+  background-color: darkturquoise;
+}
+
+/* Turquoise Shades */
+.color-button-turquoise {
+  background-color: turquoise;
+}
+
+/* Pale Turquoise Shades */
+.color-button-paleturquoise {
+  background-color: paleturquoise;
+}
+
+/* Aquamarine Shades */
+.color-button-aquamarine {
+  background-color: aquamarine;
+}
+
+/* Cadet Blue Shades */
+.color-button-cadetblue {
+  background-color: cadetblue;
+}
+
+/* Steel Blue Shades */
+.color-button-steelblue {
+  background-color: steelblue;
+}
+
+/* Cornflower Blue Shades */
+.color-button-cornflowerblue {
+  background-color: cornflowerblue;
+}
+
+/* Deep Sky Blue Shades */
+.color-button-deepskyblue {
+  background-color: deepskyblue;
+}
+
+/* Dodger Blue Shades */
+.color-button-dodgerblue {
+  background-color: dodgerblue;
+}
+
+/* Sky Blue Shades */
+.color-button-skyblue {
+  background-color: skyblue;
+}
+
+/* Light Sky Blue Shades */
+.color-button-lightskyblue {
+  background-color: lightskyblue;
+}
+
+/* Midnight Blue Shades */
+.color-button-midnightblue {
+  background-color: midnightblue;
+}
+
+/* Navy Shades */
+.color-button-navy {
+  background-color: navy;
+}
+
+/* Medium Blue Shades */
+.color-button-mediumblue {
+  background-color: mediumblue;
+}
+
+/* Blue Shades */
+.color-button-blue {
+  background-color: blue;
+}
+
+/* Royal Blue Shades */
+.color-button-royalblue {
+  background-color: royalblue;
+}
+
+/* Indigo Shades */
+.color-button-indigo {
+  background-color: indigo;
+}
+
+/* Dark Slate Blue Shades */
+.color-button-darkslateblue {
+  background-color: darkslateblue;
+}
+
+/* Medium Slate Blue Shades */
+.color-button-mediumslateblue {
+  background-color: mediumslateblue;
+}
+
+/* Medium Purple Shades */
+.color-button-mediumpurple {
+  background-color: mediumpurple;
+}
+
+/* Dark Magenta Shades */
+.color-button-darkmagenta {
+  background-color: darkmagenta;
+}
+
+/* Dark Violet Shades */
+.color-button-darkviolet {
+  background-color: darkviolet;
+}
+
+/* Medium Orchid Shades */
+.color-button-mediumorchid {
+  background-color: mediumorchid;
+}
+
+/* Purple Shades */
+.color-button-purple {
+  background-color: purple;
+}
+
+/* Thistle Shades */
+.color-button-thistle {
+  background-color: thistle;
+}
+
+/* Violet Shades */
+.color-button-violet {
+  background-color: violet;
+}
+
+/* Magenta Shades */
+.color-button-magenta {
+  background-color: magenta;
+}
+
+/* Medium Violet Red Shades */
+.color-button-mediumvioletred {
+  background-color: mediumvioletred;
+}
+
+/* Pale Violet Red Shades */
+.color-button-palevioletred {
+  background-color: palevioletred;
+}
+
+/* Deep Pink Shades */
+.color-button-deeppink {
+  background-color: deeppink;
+}
+
+/* Hot Pink Shades */
+.color-button-hotpink {
+  background-color: hotpink;
+}
+
+/* Pink Shades */
+.color-button-pink {
+  background-color: pink;
+}
+
+/* Beige Shades */
+.color-button-beige {
+  background-color: beige;
+}
+
+/* Bisque Shades */
+.color-button-bisque {
+  background-color: bisque;
+}
+
+/* Blanched Almond Shades */
+.color-button-blanchedalmond {
+  background-color: blanchedalmond;
+}
+
+/* Wheat Shades */
+.color-button-wheat {
+  background-color: wheat;
+}
+
+/* Lemon Chiffon Shades */
+.color-button-lemonchiffon {
+  background-color: lemonchiffon;
+}
+
+/* Light Yellow Shades */
+.color-button-lightyellow {
+  background-color: lightyellow;
+}
+
+/* Saddle Brown Shades */
+.color-button-saddlebrown {
+  background-color: saddlebrown;
+}
+
+/* Sienna Shades */
+.color-button-sienna {
+  background-color: sienna;
+}
+
+/* Chocolate Shades */
+.color-button-chocolate {
+  background-color: chocolate;
+}
+
+/* Peru Shades */
+.color-button-peru {
+  background-color: peru;
+}
+
+/* Sandy Brown Shades */
+.color-button-sandybrown {
+  background-color: sandybrown;
+}
+
+/* Burlywood Shades */
+.color-button-burlywood {
+  background-color: burlywood;
+}
+
+/* Tan Shades */
+.color-button-tan {
+  background-color: tan;
+}
+
+/* Rosy Brown Shades */
+.color-button-rosybrown {
+  background-color: rosybrown;
+}
+
+/* Moccasin Shades */
+.color-button-moccasin {
+  background-color: moccasin;
+}
+
+/* Peach Puff Shades */
+.color-button-peachpuff {
+  background-color: peachpuff;
+}
+
+/* Misty Rose Shades */
+.color-button-mistyrose {
+  background-color: mistyrose;
+}
+
+/* Linen Shades */
+.color-button-linen {
+  background-color: linen;
+}
+
+/* Light Steel Blue Shades */
+.color-button-lightsteelblue {
+  background-color: lightsteelblue;
+}
+
+/* Lavender Shades */
+.color-button-lavender {
+  background-color: lavender;
+}
+
+/* Honeydew Shades */
+.color-button-honeydew {
+  background-color: honeydew;
+}
+
+/* Azure Shades */
+.color-button-azure {
+  background-color: azure;
+}
+
+/* Snow Shades */
+.color-button-snow {
+  background-color: snow;
+}
+
+/* Black Shades */
+.color-button-black {
+  background-color: black;
+}
+
+/* Gray Shades */
+.color-button-gray {
+  background-color: gray;
+}
+
+/* Silver Shades */
+.color-button-silver {
+  background-color: silver;
+}
+
+/* Gainsboro Shades */
+.color-button-gainsboro {
+  background-color: gainsboro;
+}
+
+/* White Shades */
+.color-button-white {
+  background-color: white;
 }

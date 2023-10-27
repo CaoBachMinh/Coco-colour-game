@@ -1,13 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import Board from "./Board";
 import "./App.css";
-
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 function App() {
   const [isPlayingGuide, setIsPlayingGuide] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
   const guideAudioRef = useRef(null);
   const gameAudioRef = useRef(null);
-
   useEffect(() => {
     if (hasStarted) {
       gameAudioRef.current.play();
@@ -51,6 +50,7 @@ function App() {
           <Board />
         </div>
       )}
+      
     </div>
   );
 }
