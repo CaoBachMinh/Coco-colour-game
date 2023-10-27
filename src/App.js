@@ -7,7 +7,6 @@ function App() {
   const [hasStarted, setHasStarted] = useState(false);
   const guideAudioRef = useRef(null);
   const gameAudioRef = useRef(null);
-
   useEffect(() => {
     if (hasStarted) {
       gameAudioRef.current.play();
