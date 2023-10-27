@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./App.css";
+import Button from "./Color_Button";
 
 export default function Board() {
   const [isCompleted, setIsCompleted] = useState(false);
@@ -158,6 +159,7 @@ export default function Board() {
       {isCompleted && (
         <div className="congrats-message">
           Chúc mừng bé đã hoàn thành{" "}
+          <div>
           <button
             className="home-button"
             onClick={() =>
@@ -166,6 +168,13 @@ export default function Board() {
           >
             Quay về trang chủ
           </button>
+          <button className="next-button">
+              Muc tiep theo              
+            </button>
+          </div>
+          <div>
+            
+          </div>
         </div>
       )}
       <audio
@@ -215,38 +224,7 @@ export default function Board() {
           7
         </div>
       </div>
-      <div className="palette d-flex justify-content-around">
-        <div className="palette-color palette-red" onClick={handleRedClick}>
-          1
-        </div>
-        <div
-          className="palette-color palette-orange"
-          onClick={handleOrangeClick}
-        >
-          2
-        </div>
-        <div
-          className="palette-color palette-yellow"
-          onClick={handleYellowClick}
-        >
-          3
-        </div>
-        <div className="palette-color palette-green" onClick={handleGreenClick}>
-          4
-        </div>
-        <div className="palette-color palette-blue" onClick={handleBlueClick}>
-          5
-        </div>
-        <div
-          className="palette-color palette-purple"
-          onClick={handlePurpleClick}
-        >
-          6
-        </div>
-        <div className="palette-color palette-pink" onClick={handlePinkClick}>
-          7
-        </div>
-      </div>
+      <Button/>
     </div>
   );
 }
