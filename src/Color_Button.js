@@ -1,20 +1,12 @@
 import React, { useState } from 'react';
-<<<<<<< Updated upstream
-
-function App() {
-=======
 import './App.css';
 function App({setcurcolor}) {
->>>>>>> Stashed changes
   const [selectedColor, setSelectedColor] = useState(null);
 
   const handleColorClick = (colorId) => {
     setSelectedColor(colorId);
-<<<<<<< Updated upstream
-=======
     setcurcolor(colorId);
     console.log(colorId);
->>>>>>> Stashed changes
   };
 
   const colorData = [
@@ -127,12 +119,6 @@ function App({setcurcolor}) {
         ></div>
       ))}
     </div>
-<<<<<<< Updated upstream
-  );
-}
-
-export default App;
-=======
     
   );
 }
@@ -140,4 +126,3 @@ export default App;
 
 export default App;
 
->>>>>>> Stashed changes
