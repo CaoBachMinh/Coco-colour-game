@@ -2,13 +2,23 @@
     background-color: #404040;
 }
 
-.container{
+.container_example{
     margin: 0px;
-    width: 600px;
+    width: 400px;
+    position: absolute;
+    right: 310px;
+    top: 25px;
+    transform: translate(150px,100px);
+    padding: 10px;
+    display: flex;
+}
+
+.container_2{
+    margin: 0px;
+    width: 400px;
     position: relative;
     transform: translate(150px,100px);
     padding: 10px;
-    scale: 1.4;
     display: flex;
 }
 

@@ -10,7 +10,7 @@ import { Rabbit } from './Level_2/Rabbit';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Rabbit />
+    <App/>
   </React.StrictMode>
 );
 

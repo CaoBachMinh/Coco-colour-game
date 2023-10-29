@@ -56,7 +56,7 @@ function App({setcurcolor}) {
   ];
 
   return (
-    <div className="palette justify-content-around container_1">
+    <div className="palette_1 justify-content-around container_1">
       {colorData.map((color, index) => (
         <div
           className={`color-button color-button-${color.id}`}
