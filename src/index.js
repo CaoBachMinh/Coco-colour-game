@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Bear } from './Level_2/Bear';
+import { Bird } from './Level_2/Bird';
+import { Rabbit } from './Level_2/Rabbit';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Rabbit />
   </React.StrictMode>
 );
 
