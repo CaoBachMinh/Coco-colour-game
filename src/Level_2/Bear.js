@@ -227,7 +227,6 @@ export function Bear(){
       <div className="container_example">
          <img src="/example_picture/bear.PNG" alt="bird"></img>
       </div>
-      <Button/>
     </div>
     )
 }

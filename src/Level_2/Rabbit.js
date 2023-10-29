@@ -122,7 +122,6 @@ export function Rabbit(){
       <div className="container_example">
          <img src="/example_picture/rabbit.PNG" alt="bird"></img>
       </div>
-      <Button/>
     </div>
     )
 }

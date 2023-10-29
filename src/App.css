@@ -9,19 +9,38 @@
   font-size: 18px;
 }
 
+.container_example_1{
+    margin: 0px;
+    width: 400px;
+    position: absolute;
+    right: 350px;
+    bottom: 135px;
+    transform: translate(150px,100px);
+    padding: 10px;
+    scale: 1.1;
+    display: flex;
+}
 .Board {
   max-width: 900px;
-  margin-top: 25px;
+  margin-top: -30px;
   background: lightblue;
   border-radius: 9px;
   padding: 30px;
   position: absolute;
-  left: 50%;
+  left: 10%;
   transform: translate(-50%, 0);
+  transform: scale(0.8); /* Tăng kích thước lên 1.2 lần */
+
 }
 
+.timer{
+  margin-top: 25px;
+}
+.button_color{
+  margin-top: 450px;
+}
 .picture {
-  padding: 30px;
+  padding: 230px;
   height: 430px;
   position: relative;
   background: white;

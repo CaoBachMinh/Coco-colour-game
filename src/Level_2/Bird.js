@@ -99,7 +99,6 @@ export function Bird(){
       <div className="container_example">
          <img src="/example_picture/bird.PNG" alt="bird"></img>
       </div>
-      <Button/>
     </div>
     )
 }
