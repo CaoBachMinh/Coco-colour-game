@@ -10,6 +10,7 @@
     border-radius: 20px;
     position: absolute;
     transform: translate(-200px,20px);
+    margin-left: 10%;
 }
 
 .Return_MainPage:hover{
@@ -35,7 +36,6 @@
 
 .color_container_lv2 {
     position: relative;
-    border-style: solid;
     background-color: none;
     align-items: center;
     justify-content: center;
@@ -43,6 +43,7 @@
     width: 1000px;
     height: 210px;
     display: grid;
+    padding-bottom: 100px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 

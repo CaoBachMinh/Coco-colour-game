@@ -49,12 +49,13 @@
 }
 .button_color{
   margin-top: 450px;
+  background: #C2FCD9;
 }
 .picture {
   padding: 230px;
   height: 430px;
   position: relative;
-  background: white;
+  background: #ffffff;
   border-radius: 9px;
   text-align: center;
 }
@@ -154,14 +155,13 @@
 
 .palette {
   padding: 135px 258px;
-  background: white;
   border-radius: 9px;
   font-weight: bold;
   font-size: 16px;
 }
 .palette_1 {
   padding: 40px 40px;
-  background: white;
+  background: #C2FCD9;
   border-radius: 9px;
   font-weight: bold;
   font-size: 16px;
@@ -285,12 +285,13 @@ footer {
 
 .start-container {
   margin-top: 10px;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  top: 50%;
+  transform: (-50%,-50%);
   align-items: center;
-  background-color: #fafafa;
+  background-color: #C2FCD9;
   font-size: 18px;
   color: #ff4500;
   font-family: "Comic Sans MS", cursive, sans-serif;
@@ -316,7 +317,7 @@ footer {
 @keyframes blink-green {
   0%,
   100% {
-    background-color: green;
+    background-color: rgb(255, 0, 0);
   }
   50% {
     background-color: transparent;

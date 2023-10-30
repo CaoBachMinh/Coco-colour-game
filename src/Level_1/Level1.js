@@ -49,8 +49,8 @@ export function Board_lv1({curcolor}){
       }, [petalone, petaltwo, petalthree, petalfour, petalfive, petalsix, center]);
       const petals = [
         { className: petalone,  id:"red",number : "one"},
-        { className: petaltwo,  id:"darkorange",number : "two"},
-        { className: petalthree, id:"orange",number : "three"},
+        { className: petaltwo,  id:"orange",number : "two"},
+        { className: petalthree, id:"yellow",number : "three"},
         { className: petalfour,  id:"green",number : "four"},
         { className: petalfive, id:"blue",number : "five"},
         { className: petalsix, id : "darkmagenta",number : "six"},

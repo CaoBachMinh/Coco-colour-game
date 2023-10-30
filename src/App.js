@@ -43,9 +43,8 @@ function App() {
           type="audio/mpeg"
         />
       </audio>
-      <div className="Timer">
-        <Timer/>
-      </div>
+
+      
       <Router>
 
         {!hasStarted ? (
@@ -56,13 +55,15 @@ function App() {
             {isPlayingGuide && <p>Đang phát âm thanh ...</p>}
           </div>
         ) : (
-          <Routes>
-            <Route path='/' element={<Board/>}/>
-            <Route path='/MainPage_lv2' element={<MainPage_lv2/>} />
-            <Route path='/Bear' element={<Bear/>} />
-            <Route path='/Bird' element={<Bird/>} />
-            <Route path='/Rabbit' element={<Rabbit/>} />
-          </Routes>
+          <><div className="Timer">
+              <Timer />
+            </div><Routes>
+                <Route path='/' element={<Board />} />
+                <Route path='/MainPage_lv2' element={<MainPage_lv2 />} />
+                <Route path='/Bear' element={<Bear />} />
+                <Route path='/Bird' element={<Bird />} />
+                <Route path='/Rabbit' element={<Rabbit />} />
+              </Routes></>
         )}
       </Router>
       
