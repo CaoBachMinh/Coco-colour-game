@@ -1,7 +1,8 @@
 .MainPage{
     position: relative;
-    transform: translateY(100px);
+    transform: translateY(-100px);
     display: flex;
+    margin-top: 10%;
     flex-direction: row;
     justify-content: center;
     align-items: center;

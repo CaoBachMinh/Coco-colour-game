@@ -21,9 +21,9 @@ export function Finish() {
             }
           >
             Quay về trang chủ
-          </button>
+          </button>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
           <button className="next-button" onClick={() => navigate('/MainPage_lv2',{replace:true})}>
-            Mức trò chơi tiếp theo
+            Đến trò chơi tiếp theo
           </button>
         </div>
         <div></div>

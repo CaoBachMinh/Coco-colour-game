@@ -36,7 +36,7 @@ export function Timer(){
   }, [timeRemaining]);
     return(
         <div className="timer">
-        Thời gian còn lại: {formattedTimeRemaining}
+        <strong>Thời gian còn lại: </strong> {formattedTimeRemaining}
         <p>Khuyến cáo chơi game 30 phút/ngày</p>
       </div>
     );

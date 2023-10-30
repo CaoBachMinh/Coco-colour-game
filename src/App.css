@@ -217,12 +217,13 @@
   color: #ff4500;
   cursor: pointer;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-weight: bold;
   transition: all 0.3s;
   margin-left: 35px;
 }
 .next-button{
   margin-top: 20px;
+  margin-left: 5%;
   padding: 5px 30px;
   background-color: #ffd700;
   border: none;
@@ -231,12 +232,17 @@
   color: #ff4500;
   cursor: pointer;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-weight: bold;
   transition: all 0.3s;
   margin-right: 50px;
 }
 
 .home-button:hover {
+  background-color: #ffc700;
+  transform: translateY(-5px);
+}
+
+.next-button:hover {
   background-color: #ffc700;
   transform: translateY(-5px);
 }
