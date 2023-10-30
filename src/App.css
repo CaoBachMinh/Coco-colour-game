@@ -1,6 +1,17 @@
 .App {
+  height: 300px;
   max-width: 1000px;
   margin: 0 auto;
+}
+
+.button_color{
+  position: relative;
+  transform: translate(0px,-300px);
+}
+
+.flower-img{
+  position: relative;
+  transform: translate(550px,100px);
 }
 
 .timer {

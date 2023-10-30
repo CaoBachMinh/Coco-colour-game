@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./App.css";
 
-export default function App(){
+export function Timer(){
     const [timeRemaining, setTimeRemaining] = useState(30 * 60);
     const [intervalId, setIntervalId] = useState(null);
 

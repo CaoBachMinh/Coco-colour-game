@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import './App.css';
-import Timer from "./Timer";
-function App({curcolor}){
+import '../App.css';
+import { useNavigate } from "react-router";
+
+export function Board_lv1({curcolor}){
+  const navigate = useNavigate();
   const [isCompleted, setIsCompleted] = useState(false);
   const audioRef = useRef(null);
   const [center, setCenter] = useState("center");
@@ -25,6 +27,11 @@ function App({curcolor}){
       else setCenter("center center-active");
     }
   };
+  useEffect(() => {
+    if(isCompleted){
+      navigate('/MainPage_lv2',{replace:true})
+    }
+  },[isCompleted])
       useEffect(() => {
         if (
           petalone.includes("petal-one-active") &&
@@ -86,4 +93,3 @@ function App({curcolor}){
       
     );  
 };
-export default App;

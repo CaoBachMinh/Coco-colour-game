@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { Bear } from './Level_2/Bear';
 import { Bird } from './Level_2/Bird';
 import { Rabbit } from './Level_2/Rabbit';
+import { MainPage_lv2 } from './Level_2/MainPage_lv2';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

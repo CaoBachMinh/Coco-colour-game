@@ -1,7 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
-import Board from "./Board";
+import Board from "./Level_1/Board";
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { MainPage_lv2 } from "./Level_2/MainPage_lv2";
+import { Bear } from "./Level_2/Bear";
+import { Bird } from "./Level_2/Bird";
+import { Rabbit } from "./Level_2/Rabbit";
+import { Timer } from "./Timer";
+
 function App() {
   const [isPlayingGuide, setIsPlayingGuide] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
@@ -37,19 +43,28 @@ function App() {
           type="audio/mpeg"
         />
       </audio>
+      <div className="Timer">
+        <Timer/>
+      </div>
+      <Router>
 
-      {!hasStarted ? (
-        <div className="start-container">
-          <button className="start-button" onClick={startGame}>
-            Nghe hướng dẫn chơi
-          </button>
-          {isPlayingGuide && <p>Đang phát âm thanh ...</p>}
-        </div>
-      ) : (
-        <div className="container">
-          <Board />
-        </div>
-      )}
+        {!hasStarted ? (
+          <div className="start-container">
+            <button className="start-button" onClick={startGame}>
+              Nghe hướng dẫn chơi
+            </button>
+            {isPlayingGuide && <p>Đang phát âm thanh ...</p>}
+          </div>
+        ) : (
+          <Routes>
+            <Route path='/' element={<Board/>}/>
+            <Route path='/MainPage_lv2' element={<MainPage_lv2/>} />
+            <Route path='/Bear' element={<Bear/>} />
+            <Route path='/Bird' element={<Bird/>} />
+            <Route path='/Rabbit' element={<Rabbit/>} />
+          </Routes>
+        )}
+      </Router>
       
     </div>
   );
