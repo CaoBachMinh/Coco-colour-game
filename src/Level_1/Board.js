@@ -13,7 +13,7 @@ export default function Board() {
     <div className="Board">
         <Board_lv1 curcolor={curcolor} />
       </div>
-      <img className="flower-img" src="/example_picture/flower.PNG" alt="flower"></img>
+      <img className="flower-img" src="/example_picture/flower.png" alt="flower"></img>
       <div className="button_color"><Button setcurcolor={setcurcolor}></Button></div>
       </>
   );
