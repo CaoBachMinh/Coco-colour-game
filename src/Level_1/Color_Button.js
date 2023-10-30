@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './App.css';
-function App({setcurcolor}) {
+import '../App.css';
+function Color_Button({setcurcolor}) {
   const [selectedColor, setSelectedColor] = useState(null);
 
   const handleColorClick = (colorId) => {
@@ -72,5 +72,4 @@ function App({setcurcolor}) {
 }
 
 
-export default App;
-
+export default Color_Button;

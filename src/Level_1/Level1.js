@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import './App.css';
-function App({curcolor}){
+import '../App.css';
+import { useNavigate } from "react-router";
+
+export function Board_lv1({curcolor}){
+  const navigate = useNavigate();
   const [isCompleted, setIsCompleted] = useState(false);
   const audioRef = useRef(null);
   const [center, setCenter] = useState("center");
@@ -10,8 +13,6 @@ function App({curcolor}){
   const [petalfour, setpetalfour] = useState("petal petal-four");
   const [petalfive, setpetalfive] = useState("petal petal-five");
   const [petalsix, setpetalsix] = useState("petal petal-six");
-  const [timeRemaining, setTimeRemaining] = useState(30 * 60);
-  const [intervalId, setIntervalId] = useState(null);
 
 
   function handleColorClick (colorId,name) {
@@ -26,36 +27,11 @@ function App({curcolor}){
       else setCenter("center center-active");
     }
   };
-  const formattedTimeRemaining = `${Math.floor(timeRemaining / 60)
-    .toString()
-    .padStart(2, "0")}:${(timeRemaining % 60).toString().padStart(2, "0")}`;
-
   useEffect(() => {
-    const id = setInterval(() => {
-      setTimeRemaining((prevTime) => {
-        if (prevTime <= 1) {
-          clearInterval(id);
-          return 0;
-        }
-        return prevTime - 1;
-      });
-    }, 1000);
-
-    setIntervalId(id);
-
-    // Cleanup effect
-    return () => {
-      clearInterval(id);
-    };
-  }, []);
-  useEffect(() => {
-    if (timeRemaining === 0) {
-      window.alert(
-        "Bạn đã chơi quá 30 phút! Hãy nghỉ ngơi và tránh chơi quá lâu."
-      );
+    if(isCompleted){
+      navigate('/MainPage_lv2',{replace:true})
     }
-  }, [timeRemaining]);
-
+  },[isCompleted])
       useEffect(() => {
         if (
           petalone.includes("petal-one-active") &&
@@ -108,31 +84,12 @@ function App({curcolor}){
         src="sound/congratsSound.mp3"
         preload="auto"
       ></audio>
-      <div className="timer">
-        Thời gian còn lại: {formattedTimeRemaining}
-        <p>Khuyến cáo chơi game 30 phút/ngày</p>
-      </div>
-      <p className="instructions">
-        Hướng dẫn chơi trò chơi tô màu theo số thứ tự:
-        <br />
-        1. Nhấn vào các mảnh hoa để tô màu chúng theo thứ tự từ 1 đến 7.
-        <br />
-        2. Chọn màu sắc từ bảng màu hàng ngang bên dưới và tô màu vào các mảnh
-        hoa.
-        <br />
-        3. Khi tất cả mảnh hoa đã được tô màu đúng thứ tự, bạn sẽ hoàn thành trò
-        chơi.
-        <br />
-        Gợi ý: Hãy nhấn vào số 1 và sau đó nhấn vào cánh hoa đang nhấp nháy để
-        tô màu cánh hoa.
-      </p>
         <div className="picture mb-4 d-flex justify-content-center">
       {petals.map((petal, index) => (
         <div className={petal.className} onClick={() => handleColorClick(petal.id,petal.number)} key={index}></div>
       ))}
-    </div>
+        </div>
       </div>
       
-    );
+    );  
 };
-export default App;

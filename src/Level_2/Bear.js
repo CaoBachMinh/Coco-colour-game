@@ -1,9 +1,10 @@
 import { useState } from "react";
 import "./Board_lv2.css"
 import { useEffect } from "react";
-import Button from "../Color_Button";
+import { useNavigate } from "react-router";
 
 export function Bear(){
+   const navigate = useNavigate();
     const [isClick,setIsClick] = useState(false);
     const audio = new Audio("/sound/clickbutton.mp3")
    const Clicked = () => {
@@ -36,7 +37,9 @@ export function Bear(){
     
    return(
    <div>
-      <div id="content1" style={{display: 'block'}} class="container_2">
+      <button className="Return_MainPage" onClick={()=> navigate('/MainPage_lv2',{replace:true})}>Quay Về</button>
+      <img className="example_picture_lv2" src="/example_picture/bear.PNG"></img>
+      <div id="content1" style={{display: 'block'}} class="container_lv2">
         <svg id="printable" class="color" viewBox="0 0 400 400" width="400" height="400">
         <path
            id="path259"
@@ -224,10 +227,83 @@ export function Bear(){
            style={{fill:'#ffffff',stroke_width:'0.59981447'}} />
         </svg>
       </div>
-      <div className="container_example">
-         <img src="/example_picture/bear.PNG" alt="bird"></img>
+      <div class="color_container_lv2">
+         <div class="color-button" style={{background: 'maroon'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'brown'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'crimson'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'red'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'tomato'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'indianred'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'salmon'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'orangered'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'darkorange'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'orange'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'gold'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'darkkhaki'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'khaki'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'olive'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'yellow'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'yellowgreen'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'greenyellow'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'green'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'lime'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'limegreen'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'palegreen'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'springgreen'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'seagreen'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'mediumaquamarine'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'lightseagreen'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'darkslategray'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'teal'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'cyan'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'darkturquoise'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'turquoise'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'aquamarine'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'cadetblue'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'steelblue'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'cornflowerblue'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'deepskyblue' }}onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'dodgerblue'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'skyblue'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'lightskyblue'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'navy'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'mediumblue'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'blue'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'royalblue'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'indigo'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'darkslateblue'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'mediumslateblue'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'mediumpurple'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'darkmagenta'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'darkviolet'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'mediumorchid'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'purple'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'thistle'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'violet'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'magenta' }}onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'mediumvioletred'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'palevioletred'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'deeppink'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'hotpink'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'pink'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'beige'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'bisque'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'wheat'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'lightyellow'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'saddlebrown'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'sienna'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'chocolate'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'burlywood'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'tan'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'rosybrown'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'peachpuff'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'lavender'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'black'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'gray'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'silver'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'gainsboro'}} onClick={Clicked}></div>
+         <div class="color-button" style={{background: 'white'}} onClick={Clicked}></div>
       </div>
-      <Button/>
     </div>
     )
 }
