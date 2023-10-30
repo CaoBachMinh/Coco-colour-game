@@ -288,13 +288,15 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative; /* Added positioning context */
   top: 50%;
-  transform: (-50%,-50%);
+  left: 50%; /* Added horizontal positioning */
+  transform: translate(-50%, -50%); /* Corrected syntax for transform */
   align-items: center;
   background-color: #C2FCD9;
   font-size: 18px;
   color: #ff4500;
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: "Comic Sans MS", cursive, sans-serif; /* Separated font values with commas */
 }
 
 .start-button {

@@ -2,11 +2,16 @@ import React, { useState } from 'react';
 import '../App.css';
 function Color_Button({setcurcolor}) {
   const [selectedColor, setSelectedColor] = useState(null);
-
+  const [isClick,setIsClick] = useState(false);
+  const audio = new Audio("/sound/clickbutton.mp3")
   const handleColorClick = (colorId) => {
     setSelectedColor(colorId);
     setcurcolor(colorId);
     console.log(colorId);
+    if (isClick) {
+      setIsClick(false)
+    } else setIsClick(true)
+    audio.play();
   };
 
   const colorData = [
@@ -15,8 +20,6 @@ function Color_Button({setcurcolor}) {
     { id: "crimson", backgroundColor: "crimson" },
     { id: "red", backgroundColor: "red" },
     { id: "coral", backgroundColor: "coral" },
-    { id: "indianred", backgroundColor: "indianred" },
-    { id: "salmon", backgroundColor: "salmon" },
     { id: "orange", backgroundColor: "orange" },
     { id: "darkkhaki", backgroundColor: "darkkhaki" },
     { id: "khaki", backgroundColor: "khaki" },
@@ -32,10 +35,8 @@ function Color_Button({setcurcolor}) {
     { id: "cyan", backgroundColor: "cyan" },
     { id: "cornflowerblue", backgroundColor: "cornflowerblue" },
     { id: "dodgerblue", backgroundColor: "dodgerblue" },
-    { id: "navy", backgroundColor: "navy" },
     { id: "blue", backgroundColor: "blue" },
     { id: "darkmagenta", backgroundColor: "darkmagenta" },
-    { id: "violet", backgroundColor: "violet" },
     { id: "magenta", backgroundColor: "magenta" },
     { id: "saddlebrown", backgroundColor: "saddlebrown" },
     { id: "chocolate", backgroundColor: "chocolate" },

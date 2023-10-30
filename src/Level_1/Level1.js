@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import '../App.css';
 import { useNavigate } from "react-router";
 
-export function Board_lv1({curcolor}){
+export function Board_lv1({curcolor,setcompleted}){
   const navigate = useNavigate();
   const [isCompleted, setIsCompleted] = useState(false);
   const audioRef = useRef(null);
@@ -18,7 +18,9 @@ export function Board_lv1({curcolor}){
   function handleColorClick (colorId,name) {
     console.log(colorId);
     if (colorId == curcolor){
-      if (name == 'one') setpetalone("petal petal-one petal-one-active");
+      if (name == 'one'){
+        setpetalone("petal petal-one petal-one-active");
+      } 
       else if (name == 'two') setpetaltwo("petal petal-two petal-two-active");
       else if (name == 'three') setpetalthree("petal petal-three petal-three-active");
       else if (name == 'four') setpetalfour("petal petal-four petal-four-active");
@@ -27,11 +29,11 @@ export function Board_lv1({curcolor}){
       else setCenter("center center-active");
     }
   };
-  useEffect(() => {
-    if(isCompleted){
-      navigate('/MainPage_lv2',{replace:true})
-    }
-  },[isCompleted])
+  // useEffect(() => {
+  //   if(isCompleted){
+  //     navigate('/MainPage_lv2',{replace:true})
+  //   }
+  // },[isCompleted])
       useEffect(() => {
         if (
           petalone.includes("petal-one-active") &&
@@ -43,8 +45,9 @@ export function Board_lv1({curcolor}){
           center.includes("center-active")
         ) {
           setIsCompleted(true);
+          setcompleted(true);
           console.log(isCompleted);
-          audioRef.current.play();
+          
         }
       }, [petalone, petaltwo, petalthree, petalfour, petalfive, petalsix, center]);
       const petals = [
@@ -58,32 +61,6 @@ export function Board_lv1({curcolor}){
       ];
     return(
       <div>
-        {isCompleted && (
-        <div className="congrats-message">
-          Chúc mừng bé đã hoàn thành{" "}
-          <div>
-          <button
-            className="home-button"
-            onClick={() =>
-              (window.location.href = "https://coco-game-tau.vercel.app/")
-            }
-          >
-            Quay về trang chủ
-          </button>
-          <button className="next-button">
-              Muc tiep theo              
-            </button>
-          </div>
-          <div>
-            
-          </div>
-        </div>
-      )}
-      <audio
-        ref={audioRef}
-        src="sound/congratsSound.mp3"
-        preload="auto"
-      ></audio>
         <div className="picture mb-4 d-flex justify-content-center">
       {petals.map((petal, index) => (
         <div className={petal.className} onClick={() => handleColorClick(petal.id,petal.number)} key={index}></div>

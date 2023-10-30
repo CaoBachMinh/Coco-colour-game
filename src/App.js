@@ -57,7 +57,8 @@ function App() {
         ) : (
           <><div className="Timer">
               <Timer />
-            </div><Routes>
+            </div>
+            <Routes>
                 <Route path='/' element={<Board />} />
                 <Route path='/MainPage_lv2' element={<MainPage_lv2 />} />
                 <Route path='/Bear' element={<Bear />} />
