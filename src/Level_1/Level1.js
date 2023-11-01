@@ -15,25 +15,20 @@ export function Board_lv1({curcolor,setcompleted}){
   const [petalsix, setpetalsix] = useState("petal petal-six");
 
 
-  function handleColorClick (colorId,name) {
-    console.log(colorId);
-    if (colorId == curcolor){
-      if (name == 'one'){
-        setpetalone("petal petal-one petal-one-active");
-      } 
-      else if (name == 'two') setpetaltwo("petal petal-two petal-two-active");
-      else if (name == 'three') setpetalthree("petal petal-three petal-three-active");
-      else if (name == 'four') setpetalfour("petal petal-four petal-four-active");
-      else if (name == 'five') setpetalfive("petal petal-five petal-five-active");
-      else if (name == 'six') setpetalsix("petal petal-six petal-six-active");
-      else setCenter("center center-active");
+  function handleColorClick (name) {
+    console.log(curcolor);
+    const activeClass = `color-button-${curcolor}`; 
+    if (name == 'one') {
+      setpetalone(`petal petal-${name} ${activeClass}`);
     }
+    else if (name == 'two') setpetaltwo(`petal petal-${name} ${activeClass}`);
+    else if (name == 'three') setpetalthree(`petal petal-${name} ${activeClass}`);
+    else if (name == 'four') setpetalfour(`petal petal-${name} ${activeClass}`);
+    else if (name == 'five') setpetalfive(`petal petal-${name} ${activeClass}`);
+    else if (name == 'six') setpetalsix(`petal petal-${name} ${activeClass}`);
+    else setCenter(`center ${activeClass}`);
   };
-  // useEffect(() => {
-  //   if(isCompleted){
-  //     navigate('/MainPage_lv2',{replace:true})
-  //   }
-  // },[isCompleted])
+
       useEffect(() => {
         if (
           petalone.includes("petal-one-active") &&
@@ -62,9 +57,9 @@ export function Board_lv1({curcolor,setcompleted}){
     return(
       <div>
         <div className="picture mb-4 d-flex justify-content-center">
-      {petals.map((petal, index) => (
-        <div className={petal.className} onClick={() => handleColorClick(petal.id,petal.number)} key={index}></div>
-      ))}
+          {petals.map((petal, index) => (
+            <div className={petal.className} onClick={() => handleColorClick(petal.number)} key={index}></div>
+          ))}
         </div>
       </div>
       

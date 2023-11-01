@@ -91,35 +91,35 @@
 }
 
 .petal-one {
-  bottom: 62%;
+  bottom: 60%;
 }
 
 .petal-two {
   transform: rotate(60deg);
-  right: 28%;
-  bottom: 48%;
+  right: 20%;
+  bottom: 49%;
 }
 
 .petal-three {
   transform: rotate(120deg);
-  right: 28%;
-  bottom: 23%;
+  right: 20%;
+  bottom: 25%;
 }
 
 .petal-four {
   transform: rotate(180deg);
-  bottom: 9%;
+  bottom: 13%;
 }
 
 .petal-five {
   transform: rotate(240deg);
-  left: 28%;
-  bottom: 23%;
+  left: 20%;
+  bottom: 25%;
 }
 
 .petal-six {
   transform: rotate(300deg);
-  left: 28%;
+  left: 20%;
   bottom: 48%;
 }
 
@@ -264,10 +264,9 @@ footer {
   font-size: 28px;
   color: #ff4500;
   font-family: "Comic Sans MS", cursive, sans-serif;
-  text-align: center;
+  text-align: left;
   margin-top: 20px;
   text-shadow: 2px 2px 4px #000000;
-  background: #ffd700;
   padding: 10px;
   border-radius: 15px;
   animation: bounce 1s;

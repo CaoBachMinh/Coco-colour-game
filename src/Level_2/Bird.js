@@ -6,35 +6,53 @@ import { useNavigate } from "react-router";
 export function Bird(){
    const navigate = useNavigate();
     const [isClick,setIsClick] = useState(false);
+    const [isColour, setIsColour] = useState(false);
     const audio = new Audio("/sound/clickbutton.mp3")
-   const Clicked = () => {
-    if (isClick){
-        setIsClick(false)
-    }else setIsClick(true)
+    const Clicked = () => {
+      if (isClick) {
+        setIsClick(false);
+      } else setIsClick(true);
       audio.play();
-   }
-   const colors = document.querySelectorAll('.color');
-   const colorButtons = document.querySelectorAll('.color-button');
-   useEffect(()=>{
+    };
+    
+    function areAllPartsColored() {
+      const parts = document.querySelectorAll('.color'); // Replace '.color' with the selector for your parts
+      for (const part of parts) { // Change from 'colors' to 'parts'
+        const fill = getComputedStyle(part).fill;
+        console.log(fill);
+        if (fill === 'none' || fill === 'rgb(0, 0, 0)' || fill === 'rgba(0, 0, 0, 0)') {
+          setIsColour(false);
+          return; // If any part is not colored, return false
+        }
+      }
+      setIsColour(true); // All parts are colored
+    }
+    
+    const colors = document.querySelectorAll('.color');
+    const colorButtons = document.querySelectorAll('.color-button');
+    
+    useEffect(() => {
       colors.forEach(color => {
         color.addEventListener('click', () => {
-            const selectedColor = document.querySelector('.selected-color');
-            if (selectedColor) {
-                color.style.fill = selectedColor.style.backgroundColor;
-            }
+          const selectedColor = document.querySelector('.selected-color');
+          if (selectedColor) {
+            color.style.fill = selectedColor.style.backgroundColor;
+          }
         });
-    });
-
-    colorButtons.forEach(colorButton => {
-        colorButton.addEventListener('click', () => {
-            colorButtons.forEach(button => {
-                button.classList.remove('selected-color');
-            });
-            colorButton.classList.add('selected-color');
-        });
-    });
-   },[isClick])
+      });
     
+      colorButtons.forEach(colorButton => {
+        colorButton.addEventListener('click', () => {
+          colorButtons.forEach(button => {
+            button.classList.remove('selected-color');
+          });
+          colorButton.classList.add('selected-color');
+        });
+      });
+    
+      areAllPartsColored();
+      console.log(isColour);
+    }, [isClick]);
    return(
    <div>
       <button className="Return_MainPage" onClick={()=> navigate('/MainPage_lv2',{replace:true})}>Quay Về</button>
