@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from "react-router";
-
-export function Finish() {
+import "../Level_2/Board_lv2.css";
+export function Finish(name) {
   const navigate = useNavigate();
   const [isDone, setIsDone] = useState(false);
   const audio = new Audio("/sound/Be-gioi-qua-di.mp3")
@@ -11,7 +11,7 @@ export function Finish() {
   };
   return (
     <>
-      <div className="congrats-message">
+      <div className="name">
         <div>
           <button
             className="home-button"

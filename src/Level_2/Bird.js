@@ -20,7 +20,7 @@ export function Bird(){
       for (const part of parts) { // Change from 'colors' to 'parts'
         const fill = getComputedStyle(part).fill;
         console.log(fill);
-        if (fill === 'none' || fill === 'rgb(0, 0, 0)' || fill === 'rgba(0, 0, 0, 0)') {
+        if (fill === 'none' || fill === 'rgb(255, 255, 255)') {
           setIsColour(false);
           return; // If any part is not colored, return false
         }

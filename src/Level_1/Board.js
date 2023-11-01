@@ -12,7 +12,7 @@ export default function Board() {
     <>
     <div><Instruction></Instruction></div>
     <div>
-      <Finish/>
+      <Finish name={"congrate-message"}/>
     </div>
     <div className="Board">
         <Board_lv1 curcolor={curcolor} setcompleted={setcompleted} />
