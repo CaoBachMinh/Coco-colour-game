@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from "react-router";
 import "../Level_2/Board_lv2.css";
+
 export function Finish(name) {
   const navigate = useNavigate();
   const [isDone, setIsDone] = useState(false);
-  const audio = new Audio("/sound/Be-gioi-qua-di.mp3")
+  const audio = new Audio("/sound/be-gioi-qua.mp3")
   const Clicked = () => {
     audio.play();
     setIsDone(true);

@@ -2,10 +2,12 @@ import { useState } from "react";
 import "./Board_lv2.css"
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
+import { Finish } from "../Level_1/finised";
 
 export function Rabbit(){
    const navigate = useNavigate();
     const [isClick,setIsClick] = useState(false);
+    const [isColour, setIsColour] = useState(false);
     const audio = new Audio("/sound/clickbutton.mp3")
    const Clicked = () => {
     if (isClick){
@@ -13,6 +15,20 @@ export function Rabbit(){
     }else setIsClick(true)
       audio.play();
    }
+
+   function areAllPartsColored() {
+      const parts = document.querySelectorAll('.color'); // Replace '.color' with the selector for your parts
+      for (const part of parts) { // Change from 'colors' to 'parts'
+        const fill = getComputedStyle(part).fill;
+        console.log(fill);
+        if (fill === 'none' || fill === 'rgb(255, 255, 255)') {
+          setIsColour(false);
+          return; // If any part is not colored, return false
+        }
+      }
+      setIsColour(true); // All parts are colored
+    }
+
    const colors = document.querySelectorAll('.color');
    const colorButtons = document.querySelectorAll('.color-button');
    useEffect(()=>{
@@ -33,11 +49,17 @@ export function Rabbit(){
             colorButton.classList.add('selected-color');
         });
     });
+    areAllPartsColored();
    },[isClick])
     
    return(
    <div>
       <button className="Return_MainPage" onClick={()=> navigate('/MainPage_lv2',{replace:true})}>Quay Về</button>
+      <>
+            {
+               isColour && <Finish name={"congrate-message_1"}></Finish>
+            }
+         </>
       <img className="example_picture_lv2" src="/example_picture/rabbit.PNG"></img>
       <div id="content3" style={{display: 'block'}} class="container_lv2">
         <svg id="printable" class="color" viewBox="0 0 400 400" width="400" height="400">      

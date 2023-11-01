@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./Board_lv2.css"
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
+import { Finish } from "../Level_1/finised";
 
 export function Bird(){
    const navigate = useNavigate();
@@ -53,9 +54,16 @@ export function Bird(){
       areAllPartsColored();
       console.log(isColour);
     }, [isClick]);
+
+    
    return(
    <div>
       <button className="Return_MainPage" onClick={()=> navigate('/MainPage_lv2',{replace:true})}>Quay Về</button>
+      <>
+            {
+               isColour && <Finish name={"congrate-message_1"}></Finish>
+            }
+         </>
       <img className="example_picture_lv2" src="/example_picture/bird.PNG"></img>
     <div id="content2" style={{display: 'block'}} class="container_lv2">
         <svg id="printable" class="color" viewBox="0 0 400 400" width="400" height="400">

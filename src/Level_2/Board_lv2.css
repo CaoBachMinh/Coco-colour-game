@@ -4,24 +4,26 @@
 
 .Return_MainPage{
     background-color: white;
-    width: 100px;
+    margin-left: 5%;
     height: 50px;
+    transition: all 0.3s;
+    padding: 5px 30px;
     border: 2px solid #181818;
+    font-size: 20px;
     border-radius: 20px;
+    cursor: pointer;
     position: absolute;
+    font-weight: bold;
     transform: translate(-200px,20px);
+    transition: all 0.3s;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     margin-left: 10%;
 }
 
 .Return_MainPage:hover{
     background-color: #c23866;
     color: #fff;
-    width: 100px;
-    height: 50px;
-    border: 2px solid #181818;
-    border-radius: 20px;
-    position: absolute;
-    transform: translate(-200px,20px);
+    transform: translate(-200px,15px);
 }
 
 .container_lv2{
@@ -36,32 +38,49 @@
 .home-button_1 {
     margin-top: 20px;
     padding: 5px 30px;
-    background-color: #ffd700;
+    background-color: white;
     border: none;
-    border-radius: 25px;
+    border-radius: 20px;
     font-size: 20px;
-    color: #ff4500;
+    color: black;
     cursor: pointer;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     font-weight: bold;
     transition: all 0.3s;
     margin-left: 0%;
+    position: relative;
+;
   }
+
+  .home-button_1:hover{
+    background-color: #c23866;
+    color: white;
+    transform: translate(0px,-5px);
+  }
+
   .next-button_1{
     margin-top: 20px;
-    margin-left: 5%;
     padding: 5px 30px;
-    background-color: #ffd700;
+    background-color: white;
     border: none;
-    border-radius: 25px;
+    border-radius: 20px;
     font-size: 20px;
-    color: #ff4500;
+    color: black;
     cursor: pointer;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     font-weight: bold;
     transition: all 0.3s;
-    margin-right: 50px;
+    margin-left: 0%;
+    position: relative;
+    transform: translate(20px);
   }
+
+  .next-button_1:hover{
+    background-color: #c23866;
+    color: white;
+    transform: translate(20px,-5px);
+  }
+  
 .color_container_lv2 {
     position: relative;
     background-color: none;
