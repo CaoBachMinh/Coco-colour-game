@@ -28,13 +28,13 @@ export function Board_lv1({ curcolor, setcompleted }) {
 
   useEffect(() => {
     if (
-      petalone.includes("petal-one-active") &&
-      petaltwo.includes("petal-two-active") &&
-      petalthree.includes("petal-three-active") &&
-      petalfour.includes("petal-four-active") &&
-      petalfive.includes("petal-five-active") &&
-      petalsix.includes("petal-six-active") &&
-      center.includes("center-active")
+      petalone.includes("color-button") &&
+      petaltwo.includes("color-button") &&
+      petalthree.includes("color-button") &&
+      petalfour.includes("color-button") &&
+      petalfive.includes("color-button") &&
+      petalsix.includes("color-button") &&
+      center.includes("color-button")
     ) {
       setIsCompleted(true);
       setcompleted(true);

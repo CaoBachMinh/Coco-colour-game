@@ -11,9 +11,11 @@ export default function Board() {
   return (
     <>
     <div><Instruction></Instruction></div>
-    <div>
-      <Finish name={"congrate-message"}/>
-    </div>
+    <>
+      {
+        completed && (<Finish name={"congrate-message"}/>)
+      }
+    </>
     <div className="Board">
         <Board_lv1 curcolor={curcolor} setcompleted={setcompleted} />
       </div>
