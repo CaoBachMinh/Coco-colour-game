@@ -12,7 +12,7 @@ export function Finish(name) {
   };
   return (
     <>
-      <div className="name">
+      <div className={`${name}`}>
         <div>
           <button
             className="home-button"

@@ -1,11 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import '../App.css';
-import { useNavigate } from "react-router";
 
 export function Board_lv1({ curcolor, setcompleted }) {
-  const navigate = useNavigate();
   const [isCompleted, setIsCompleted] = useState(false);
-  const audioRef = useRef(null);
   const [center, setCenter] = useState("center");
   const [petalone, setpetalone] = useState("petal petal-one petal-green-blink");
   const [petaltwo, setpetaltwo] = useState("petal petal-two");
