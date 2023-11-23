@@ -3,38 +3,22 @@ import "./Board_lv2.css"
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
 import { Finish } from "../Level_1/finised";
-
+import { Color } from "./color";
 export function Bird() {
 
-   const [selectedColor, setSelectedColor] = useState(null);
-
-   const colorButton = [
-      'maroon', 'brown', 'crimson', 'red', 'tomato', 'indianred', 'salmon', 'orangered',
-      'darkorange', 'orange', 'gold', 'darkkhaki', 'khaki', 'olive', 'yellow', 'yellowgreen',
-      'greenyellow', 'green', 'lime', 'limegreen', 'palegreen', 'springgreen', 'seagreen',
-      'mediumaquamarine', 'lightseagreen', 'darkslategray', 'teal', 'cyan', 'darkturquoise',
-      'turquoise', 'aquamarine', 'cadetblue', 'steelblue', 'cornflowerblue', 'deepskyblue',
-      'dodgerblue', 'skyblue', 'lightskyblue', 'navy', 'mediumblue', 'blue', 'royalblue',
-      'indigo', 'darkslateblue', 'mediumslateblue', 'mediumpurple', 'darkmagenta', 'darkviolet',
-      'mediumorchid', 'purple', 'thistle', 'violet', 'magenta', 'mediumvioletred',
-      'palevioletred', 'deeppink', 'hotpink', 'pink', 'beige', 'bisque', 'wheat',
-      'lightyellow', 'saddlebrown', 'sienna', 'chocolate', 'burlywood', 'tan', 'rosybrown',
-      'peachpuff', 'lavender', 'black', 'gray', 'silver', 'gainsboro', 'white',
-   ];
+  
    const navigate = useNavigate();
    const [isClick, setIsClick] = useState(false);
    const [isColour, setIsColour] = useState(false);
    const audio = new Audio("/sound/clickbutton.mp3")
    const Clicked = () => {
-      if (isClick) {
-         setIsClick(false);
-      } else setIsClick(true);
+      console.log("Before setIsClick:", isClick);
+      setIsClick(prevState => !prevState);
+      console.log("After setIsClick:", isClick);
       audio.play();
    };
 
-   const ClickColor = (color) => {
-      setSelectedColor(color);
-   }
+
    
    function areAllPartsColored() {
       const parts = document.querySelectorAll('.color'); // Replace '.color' with the selector for your parts
@@ -56,6 +40,7 @@ export function Bird() {
       colors.forEach(color => {
          color.addEventListener('click', () => {
             const selectedColor = document.querySelector('.selected-color');
+            console.log(selectedColor);
             if (selectedColor) {
                color.style.fill = selectedColor.style.backgroundColor;
             }
@@ -74,7 +59,6 @@ export function Bird() {
       areAllPartsColored();
       console.log(isColour);
    }, [isClick]);
-
 
    return (
       <div>
@@ -145,16 +129,7 @@ export function Bird() {
                   style={{ fill: '#ffffff', stroke_width: '0.59415245' }} />
             </svg>
          </div>
-         <div class="color_container_lv2">
-            {colorButton.map((color, index) => (
-               <div
-                  key={index}
-                  className={`color-button ${selectedColor === color ? 'selected' : ''}`}
-                  style={{ background: color }}
-                  onClick={() => {Clicked(); ClickColor(color)}}
-               ></div>
-            ))}
-         </div>
+         <Color/>
       </div>
    )
 }
