@@ -98,7 +98,10 @@
     width: 40px;
     height: 40px;
 }
-
+.selected{
+  border: 2px solid #00f; /* 2px dashed blue outline */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
 .example_picture_lv2{
     margin: 0px;
     width: 400px;
