@@ -7,10 +7,12 @@ import { Bear } from "./Level_2/Bear";
 import { Bird } from "./Level_2/Bird";
 import { Rabbit } from "./Level_2/Rabbit";
 import { Timer } from "./Timer";
+import Popup from './Popup-alert/alart-popup';
 
 function App() {
   const [isPlayingGuide, setIsPlayingGuide] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
   const guideAudioRef = useRef(null);
   const gameAudioRef = useRef(null);
   useEffect(() => {
@@ -46,7 +48,6 @@ function App() {
 
       
       <Router>
-
         {!hasStarted ? (
           <div className="start-container">
             <button className="start-button" onClick={startGame}>
@@ -55,8 +56,11 @@ function App() {
             {isPlayingGuide && <p>Đang phát âm thanh ...</p>}
           </div>
         ) : (
-          <><div className="Timer">
-              <Timer />
+          <>
+          {!showPopup ? (
+            <>
+            <div className="Timer">
+              <Timer setShowPopup ={setShowPopup}/>
             </div>
             <Routes>
                 <Route path='/' element={<Board />} />
@@ -64,8 +68,14 @@ function App() {
                 <Route path='/Bear' element={<Bear />} />
                 <Route path='/Bird' element={<Bird />} />
                 <Route path='/Rabbit' element={<Rabbit />} />
-              </Routes></>
+              </Routes>
+            </>
+          ) : (
+            <Popup/>
+          )}
+          </>
         )}
+        
       </Router>
       
     </div>

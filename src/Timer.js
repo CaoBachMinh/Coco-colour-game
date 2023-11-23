@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./App.css";
 
-export function Timer(){
+export function Timer(setShowPopup){
     const [timeRemaining, setTimeRemaining] = useState(30 * 60);
     const [intervalId, setIntervalId] = useState(null);
 
@@ -14,6 +14,7 @@ export function Timer(){
       setTimeRemaining((prevTime) => {
         if (prevTime <= 1) {
           clearInterval(id);
+          setShowPopup(true);
           return 0;
         }
         return prevTime - 1;
