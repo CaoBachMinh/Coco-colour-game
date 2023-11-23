@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../App.css';
 function Color_Button({setcurcolor}) {
+  const [selectedColors, setSelectedColors] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
   const [isClick,setIsClick] = useState(false);
   const audio = new Audio("/sound/clickbutton.mp3")
@@ -13,7 +14,9 @@ function Color_Button({setcurcolor}) {
     } else setIsClick(true)
     audio.play();
   };
-
+  const ClickColor = (color) => {
+    setSelectedColors(color);
+  }
   const colorData = [
     { id: "maroon", backgroundColor: "maroon" },
     { id: "brown", backgroundColor: "brown" },
@@ -50,10 +53,10 @@ function Color_Button({setcurcolor}) {
     <div className="palette_1 justify-content-around container_1">
       {colorData.map((color, index) => (
         <div
-          className={`color-button color-button-${color.id}`}
+          className={`color-button color-button-${color.id} ${selectedColor === color.id ? 'selected' : ''}`}
           id={color.id}
           style={{ backgroundColor: color.backgroundColor }}
-          onClick={() => handleColorClick(color.id)}
+          onClick={() =>{ handleColorClick(color.id) ;ClickColor(color.id) }}
           key={index}
         ></div>
       ))}
