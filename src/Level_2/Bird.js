@@ -6,13 +6,13 @@ import { Finish } from "../Level_1/finised";
 import { Color } from "./color";
 export function Bird() {
 
-  
    const navigate = useNavigate();
    const [isClick, setIsClick] = useState(false);
    const [isColour, setIsColour] = useState(false);
    const audio = new Audio("/sound/clickbutton.mp3")
    const Clicked = () => {
       console.log("Before setIsClick:", isClick);
+      
       setIsClick(prevState => !prevState);
       console.log("After setIsClick:", isClick);
       audio.play();

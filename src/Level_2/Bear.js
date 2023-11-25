@@ -8,7 +8,6 @@ export function Bear() {
    const navigate = useNavigate();
    const [isClick, setIsClick] = useState(false);
    const [isColour, setIsColour] = useState(false);
-
    const audio = new Audio("/sound/clickbutton.mp3")
    const Clicked = () => {
       if (isClick) {
@@ -20,7 +19,6 @@ export function Bear() {
       const parts = document.querySelectorAll('.color'); // Replace '.color' with the selector for your parts
       for (const part of parts) { // Change from 'colors' to 'parts'
          const fill = getComputedStyle(part).fill;
-         console.log(fill);
          if (fill === 'none' || fill === 'rgb(255, 255, 255)') {
             setIsColour(false);
             return; // If any part is not colored, return false
@@ -30,27 +28,39 @@ export function Bear() {
    }
    const colors = document.querySelectorAll('.color');
    const colorButtons = document.querySelectorAll('.color-button');
+
    useEffect(() => {
-      colors.forEach(color => {
+      colors.forEach((color) => {
          color.addEventListener('click', () => {
             const selectedColor = document.querySelector('.selected-color');
             if (selectedColor) {
                color.style.fill = selectedColor.style.backgroundColor;
+               areAllPartsColored(); // Check if all parts are colored after updating the color
             }
          });
       });
 
-      colorButtons.forEach(colorButton => {
+      colorButtons.forEach((colorButton) => {
          colorButton.addEventListener('click', () => {
-            colorButtons.forEach(button => {
+            colorButtons.forEach((button) => {
                button.classList.remove('selected-color');
             });
             colorButton.classList.add('selected-color');
          });
       });
-      areAllPartsColored();
-      console.log(isColour);
-   }, [isClick])
+
+      areAllPartsColored(); // Check if all parts are colored initially
+
+      return () => {
+         // Cleanup event listeners if necessary
+         colors.forEach((color) => {
+            color.removeEventListener('click', () => { });
+         });
+         colorButtons.forEach((colorButton) => {
+            colorButton.removeEventListener('click', () => { });
+         });
+      };
+   }, [isClick]); // You might need to include other dependencies if needed
 
    return (
       <div>
@@ -229,7 +239,7 @@ export function Bear() {
                   style={{ fill: '#ffffff', stroke_width: '0.59981447' }} />
             </svg>
          </div>
-         <Color/>
+         <Color />
       </div>
    )
 }
